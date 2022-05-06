@@ -16,6 +16,9 @@ class _RecipeDetailState extends State<RecipeDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.recipe.label),
+      ),
       body: SafeArea(
         child: Column(
           children: [
