@@ -36,6 +36,22 @@ class _RecipeDetailState extends State<RecipeDetail> {
                 fontSize: 18.0,
               ),
             ),
+            // TODO: Add Expanded
+            Expanded(
+              child: ListView.builder(
+                padding: const EdgeInsets.all(7.0),
+                itemCount: widget.recipe.ingredients.length,
+                itemBuilder: (context, index) {
+                  final ingredient = widget.recipe.ingredients[index];
+                  // TODO: Add ingredient.quantity
+                  return Text(
+                    '${ingredient.quantity} ${ingredient.measure}${ingredient.name}',
+                  );
+                },
+              ),
+            ),
+
+            // TODO: Add Slider() here
           ],
         ),
       ),
