@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './recipe.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -34,14 +35,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SafeArea(
-        child: Container(),
+        child: ListView.builder(
+            itemCount: Recipe.samples.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Text(Recipe.samples[index].label);
+            }),
       ),
     );
   }
