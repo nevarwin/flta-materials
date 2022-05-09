@@ -52,7 +52,7 @@ class AuthorCard extends StatelessWidget {
           },
           icon: const Icon(Icons.favorite_border),
           iconSize: 30,
-          color: Colors.grey,
+          color: Colors.grey[400],
         ),
       ],
     );
