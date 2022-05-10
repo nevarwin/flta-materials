@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './circle_image.dart';
-import 'fooderlich_theme.dart';
+import './fooderlich_theme.dart';
 
 class AuthorCard extends StatelessWidget {
   final String authorName;
@@ -19,6 +19,7 @@ class AuthorCard extends StatelessWidget {
     // TODO: Replace return Container(...);
     return Row(
       // TODO 3: add alignment
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
           children: [
