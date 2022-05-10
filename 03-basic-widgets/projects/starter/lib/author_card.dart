@@ -17,45 +17,48 @@ class AuthorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: Replace return Container(...);
-    return Row(
-      // TODO 3: add alignment
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            CircleImage(
-              imageProvider: imageProvider,
-              imageRadius: 28,
-            ),
-            const SizedBox(width: 8.0),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  authorName,
-                  style: FooderlichTheme.darkTextTheme.headline2,
-                ),
-                Text(
-                  title,
-                  style: FooderlichTheme.darkTextTheme.headline3,
-                ),
-              ],
-            ),
-          ],
-        ),
-        // TODO 2: add IconButton
-        IconButton(
-          onPressed: () {
-            const snackBar = SnackBar(
-              content: Text('Favorite Pressed'),
-            );
-            ScaffoldMessenger.of(context).showSnackBar(snackBar);
-          },
-          icon: const Icon(Icons.favorite_border),
-          iconSize: 30,
-          color: Colors.grey[400],
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        // TODO 3: add alignment
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              CircleImage(
+                imageProvider: imageProvider,
+                imageRadius: 28,
+              ),
+              const SizedBox(width: 8.0),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    authorName,
+                    style: FooderlichTheme.lightTextTheme.headline2,
+                  ),
+                  Text(
+                    title,
+                    style: FooderlichTheme.lightTextTheme.headline3,
+                  ),
+                ],
+              ),
+            ],
+          ),
+          // TODO 2: add IconButton
+          IconButton(
+            onPressed: () {
+              const snackBar = SnackBar(
+                content: Text('Favorite Pressed'),
+              );
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            },
+            icon: const Icon(Icons.favorite_border),
+            iconSize: 30,
+            color: Colors.grey[400],
+          ),
+        ],
+      ),
     );
   }
 }
