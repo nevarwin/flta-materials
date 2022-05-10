@@ -22,20 +22,15 @@ class Card3 extends StatelessWidget {
             Radius.circular(10.0),
           ),
         ),
-        child: Column(
+        child: Stack(
           children: [
-            // TODO 5: add dark overlay BoxDecoration
-            Stack(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.6),
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(10.0),
-                    ),
-                  ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.6),
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(10.0),
                 ),
-              ],
+              ),
             ),
             // TODO 6: Add Container, Column, Icon and Text
             Container(
@@ -59,41 +54,39 @@ class Card3 extends StatelessWidget {
             ),
             // TODO 7: Add Center widget with Chip widget children
             Center(
-              child: Center(
-                child: Wrap(
-                  alignment: WrapAlignment.start,
-                  spacing: 12,
-                  runSpacing: 12,
-                  children: [
-                    Chip(
-                      onDeleted: () {
-                        print('delete');
-                      },
-                      backgroundColor: Colors.black.withOpacity(0.7),
-                      label: Text(
-                        'Healthy',
-                        style: FooderlichTheme.lightTextTheme.bodyText1,
-                      ),
+              child: Wrap(
+                alignment: WrapAlignment.start,
+                spacing: 12,
+                runSpacing: 12,
+                children: [
+                  Chip(
+                    onDeleted: () {
+                      print('delete');
+                    },
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                    label: Text(
+                      'Healthy',
+                      style: FooderlichTheme.darkTextTheme.bodyText1,
                     ),
-                    Chip(
-                      onDeleted: () {
-                        print('delete');
-                      },
-                      backgroundColor: Colors.black.withOpacity(0.7),
-                      label: Text(
-                        'Vegan',
-                        style: FooderlichTheme.lightTextTheme.bodyText1,
-                      ),
+                  ),
+                  Chip(
+                    onDeleted: () {
+                      print('delete');
+                    },
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                    label: Text(
+                      'Vegan',
+                      style: FooderlichTheme.darkTextTheme.bodyText1,
                     ),
-                    Chip(
-                      backgroundColor: Colors.black.withOpacity(0.7),
-                      label: Text(
-                        'Carrots',
-                        style: FooderlichTheme.lightTextTheme.bodyText1,
-                      ),
+                  ),
+                  Chip(
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                    label: Text(
+                      'Carrots',
+                      style: FooderlichTheme.darkTextTheme.bodyText1,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ],
