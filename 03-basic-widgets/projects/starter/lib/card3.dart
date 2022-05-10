@@ -39,7 +39,7 @@ class Card3 extends StatelessWidget {
             ),
             // TODO 6: Add Container, Column, Icon and Text
             Container(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -51,7 +51,7 @@ class Card3 extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(
                     'Recipe Trends',
-                    style: FooderlichTheme.lightTextTheme.headline2,
+                    style: FooderlichTheme.darkTextTheme.headline2,
                   ),
                   const SizedBox(height: 30),
                 ],
