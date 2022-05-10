@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'fooderlich_theme.dart';
+
 class Card3 extends StatelessWidget {
   const Card3({Key? key}) : super(key: key);
 
@@ -37,10 +39,21 @@ class Card3 extends StatelessWidget {
             ),
             // TODO 6: Add Container, Column, Icon and Text
             Container(
+              padding: const EdgeInsets.all(16),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(icon),
-                  Text(data),
+                  const Icon(
+                    Icons.book,
+                    color: Colors.white,
+                    size: 40,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Recipe Trends',
+                    style: FooderlichTheme.lightTextTheme.headline2,
+                  ),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),
