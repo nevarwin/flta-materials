@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import 'components.dart';
 import '../models/models.dart';
 
 class TodayRecipeListView extends StatelessWidget {
-  final List<ExploreRecipe> recipes;
-
   const TodayRecipeListView({
     Key? key,
     required this.recipes,
   }) : super(key: key);
+
+  final List<ExploreRecipe> recipes;
+
+  // TODO: Add buildCard() widget here
+  Widget buildCard(ExploreRecipe recipe) {
+    if (recipe.cardType == RecipeCardType.card1) {
+      return Card1(recipe: recipe);
+    } else if (recipe.cardType == RecipeCardType.card2) {
+      return Card2(recipe: recipe);
+    } else if (recipe.cardType == RecipeCardType.card3) {
+      return Card3(recipe: recipe);
+    } else {
+      throw Exception('This card doesn\'t exist yet');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,18 +59,5 @@ class TodayRecipeListView extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  // TODO: Add buildCard() widget here
-  Widget buildCard(ExploreRecipe recipe) {
-    if (recipe.cardType == RecipeCardType.card1) {
-      return Card1(recipe: recipe);
-    } else if (recipe.cardType == RecipeCardType.card2) {
-      return Card2(recipe: recipe);
-    } else if (recipe.cardType == RecipeCardType.card3) {
-      return Card3(recipe: recipe);
-    } else {
-      throw Exception('This card doesn\'t exist yet');
-    }
   }
 }
