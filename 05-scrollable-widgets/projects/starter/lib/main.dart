@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'fooderlich_theme.dart';
 import 'home.dart';
+import 'screens/explore_screen.dart';
 
 void main() {
   runApp(const Fooderlich());
@@ -15,7 +16,7 @@ class Fooderlich extends StatelessWidget {
     return MaterialApp(
       theme: theme,
       title: 'Fooderlich',
-      home: const Home(),
+      home: ExploreScreen(),
     );
   }
 }
