@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import '../components/components.dart';
 import '../models/models.dart';
@@ -30,7 +31,18 @@ class TodayRecipeListView extends StatelessWidget {
           Container(
             height: 400,
             // TODO: Add ListView Here
-            color: Colors.grey,
+            color: Colors.transparent,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                final recipe = recipes[index];
+                return buildCard(recipe);
+              },
+              separatorBuilder: (context, index) {
+                return const SizedBox(height: 16.0);
+              },
+              itemCount: recipes.length,
+            ),
           )
         ],
       ),
