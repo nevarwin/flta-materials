@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import '../components/components.dart';
+import 'components.dart';
 import '../models/models.dart';
 
 class TodayRecipeListView extends StatelessWidget {
