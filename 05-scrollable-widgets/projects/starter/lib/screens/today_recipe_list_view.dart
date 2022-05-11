@@ -21,7 +21,7 @@ class TodayRecipeListView extends StatelessWidget {
         right: 16,
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Recipe of the Day! 🍳',
@@ -39,7 +39,7 @@ class TodayRecipeListView extends StatelessWidget {
                 return buildCard(recipe);
               },
               separatorBuilder: (context, index) {
-                return const SizedBox(height: 16.0);
+                return const SizedBox(width: 16.0);
               },
               itemCount: recipes.length,
             ),
