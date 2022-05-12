@@ -16,7 +16,7 @@ class Fooderlich extends StatelessWidget {
     return MaterialApp(
       theme: theme,
       title: 'Fooderlich',
-      home: ExploreScreen(),
+      home: const Home(),
     );
   }
 }
