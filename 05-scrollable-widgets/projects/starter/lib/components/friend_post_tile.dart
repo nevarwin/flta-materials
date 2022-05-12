@@ -18,15 +18,16 @@ class FriendPostTile extends StatelessWidget {
       children: [
         CircleImage(
           imageProvider: AssetImage(post.profileImageUrl),
+          imageRadius: 20,
         ),
-        const SizedBox(height: 16.0),
+        const SizedBox(width: 16.0),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(post.comment),
               Text(
-                '$post.timestamp mins ago',
+                '${post.timestamp} mins ago',
                 style: const TextStyle(
                   fontWeight: FontWeight.w700,
                 ),
