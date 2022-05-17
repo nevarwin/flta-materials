@@ -20,6 +20,10 @@ class EmptyGroceryScreen extends StatelessWidget {
               ),
             ),
             // TODO 5: Add empty screen title
+            Text(
+              'No Groceries',
+              style: Theme.of(context).textTheme.headline6,
+            ),
             // TODO 6: Add empty screen subtitle
             // TODO 7: Add browse recipes button
           ],
