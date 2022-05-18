@@ -97,8 +97,9 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             // TODO 13: Add name TextField
             buildNameField(),
             // TODO 14: Add Importance selection
-            buildImportanceField(),
+            buildImportanceField(context),
             // TODO 15: Add date picker
+            buildDateField(),
             // TODO 16: Add time picker
             // TODO 17: Add color picker
             // TODO 18: Add slider
@@ -204,6 +205,42 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   }
 
   // TODO: ADD buildDateField()
+  Widget buildDateField() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Date',
+              style: GoogleFonts.lato(fontSize: 28.0),
+            ),
+            TextButton(
+              child: const Text('Select'),
+              onPressed: () async {
+                final currentDate = DateTime.now();
+                final selectedDate = await showDatePicker(
+                  context: context,
+                  initialDate: currentDate,
+                  firstDate: currentDate,
+                  lastDate: DateTime(
+                    currentDate.year + 5,
+                  ),
+                );
+                setState(() {
+                  if (selectedDate != null) {
+                    _dueDate = selectedDate;
+                  }
+                });
+              },
+            )
+          ],
+        ),
+        Text('${DateFormat('yyyy-MM-dd').format(_dueDate)}')
+      ],
+    );
+  }
 
   // TODO: Add buildTimeField()
 
