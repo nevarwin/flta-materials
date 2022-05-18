@@ -95,11 +95,11 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
         child: ListView(
           children: [
             // TODO 13: Add name TextField
-            buildNameField(),
+            buildNameField(context),
             // TODO 14: Add Importance selection
             buildImportanceField(context),
             // TODO 15: Add date picker
-            buildDateField(),
+            buildDateField(context),
             // TODO 16: Add time picker
             // TODO 17: Add color picker
             // TODO 18: Add slider
@@ -111,7 +111,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   }
 
   // TODO: Add buildNameField()
-  Widget buildNameField() {
+  Widget buildNameField(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -148,7 +148,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   }
 
   // TODO: Add buildImportanceField()
-  Widget buildImportanceField() {
+  Widget buildImportanceField(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -205,7 +205,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   }
 
   // TODO: ADD buildDateField()
-  Widget buildDateField() {
+  Widget buildDateField(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
