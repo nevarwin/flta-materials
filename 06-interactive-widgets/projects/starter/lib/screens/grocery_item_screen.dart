@@ -28,7 +28,7 @@ class GroceryItemScreen extends StatefulWidget {
 class _GroceryItemScreenState extends State<GroceryItemScreen> {
   // TODO: Add grocery item screen state properties
   final _nameController = TextEditingController();
-  final _name = '';
+  var _name = '';
   Importance _importance = Importance.low;
   DateTime _dueDate = DateTime.now();
   TimeOfDay _timeOfDay = TimeOfDay.now();
@@ -36,6 +36,31 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   var _currentSliderValue = 0;
 
   // TODO: Add initState()
+  @override
+  void initState() {
+    super.initState();
+    final originalItem = widget.originalItem;
+    if (originalItem != null) {
+      _nameController.text = originalItem.name;
+      _name = originalItem.name;
+      _importance = originalItem.importance;
+      _currentSliderValue = originalItem.quantity;
+      _currentColor = originalItem.color;
+
+      final date = originalItem.date;
+      _timeOfDay = TimeOfDay(
+        hour: date.hour,
+        minute: date.minute,
+      );
+      _dueDate = date;
+    }
+
+    _nameController.addListener(() {
+      setState(() {
+        _name = _nameController.text;
+      });
+    });
+  }
 
 // TODO: Add dispose()
 
