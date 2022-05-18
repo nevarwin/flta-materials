@@ -63,6 +63,11 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   }
 
 // TODO: Add dispose()
+  @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
