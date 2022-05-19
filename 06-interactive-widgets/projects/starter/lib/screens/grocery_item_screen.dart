@@ -96,9 +96,9 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
         child: ListView(
           children: [
             // TODO 13: Add name TextField
-            buildNameField(context),
+            buildNameField(),
             // TODO 14: Add Importance selection
-            buildImportanceField(context),
+            buildImportanceField(),
             // TODO 15: Add date picker
             buildDateField(context),
             // TODO 16: Add time picker
@@ -133,7 +133,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   }
 
   // TODO: Add buildNameField()
-  Widget buildNameField(BuildContext context) {
+  Widget buildNameField() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -170,28 +170,33 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   }
 
   // TODO: Add buildImportanceField()
-  Widget buildImportanceField(BuildContext context) {
+  Widget buildImportanceField() {
+    // 1
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // 2
         Text(
           'Importance',
           style: GoogleFonts.lato(fontSize: 28.0),
         ),
+        // 3
         Wrap(
-          spacing: 10,
+          spacing: 10.0,
           children: [
+            // 4
             ChoiceChip(
+              // 5
               selectedColor: Colors.black,
+              // 6
               selected: _importance == Importance.low,
               label: const Text(
                 'low',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                style: TextStyle(color: Colors.white),
               ),
+              // 7
               onSelected: (selected) {
-                setState(() => _importance == Importance.low);
+                setState(() => _importance = Importance.low);
               },
             ),
             ChoiceChip(
@@ -199,12 +204,10 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
               selected: _importance == Importance.medium,
               label: const Text(
                 'medium',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                style: TextStyle(color: Colors.white),
               ),
               onSelected: (selected) {
-                setState(() => _importance == Importance.medium);
+                setState(() => _importance = Importance.medium);
               },
             ),
             ChoiceChip(
@@ -212,16 +215,14 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
               selected: _importance == Importance.high,
               label: const Text(
                 'high',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                style: TextStyle(color: Colors.white),
               ),
               onSelected: (selected) {
-                setState(() => _importance == Importance.high);
+                setState(() => _importance = Importance.high);
               },
             ),
           ],
-        ),
+        )
       ],
     );
   }
