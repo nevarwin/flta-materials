@@ -56,7 +56,16 @@ class GroceryTile extends StatelessWidget {
           ),
           // TODO 23: Add Row to group (quantity, checkbox)
           Row(
-            children: [],
+            children: [
+              Text(
+                item.quantity.toString(),
+                style: GoogleFonts.lato(
+                  decoration: textDecoration,
+                  fontSize: 21.0,
+                ),
+              ),
+              buildCheckbox(),
+            ],
           ),
         ],
       ),
