@@ -34,6 +34,7 @@ class GroceryTile extends StatelessWidget {
                 width: 5.0,
                 color: item.color,
               ),
+              const SizedBox(width: 16.0),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
