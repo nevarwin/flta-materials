@@ -8,10 +8,12 @@ class EmptyGroceryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO 3: Replace and add layout widgets
+    // 1
     return Padding(
       padding: const EdgeInsets.all(30.0),
+      // 2
       child: Center(
+        // 3
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -33,7 +35,7 @@ class EmptyGroceryScreen extends StatelessWidget {
             ),
             MaterialButton(
               textColor: Colors.white,
-              child: const Text('Browse Groceries'),
+              child: const Text('Browse Recipes'),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
@@ -41,7 +43,7 @@ class EmptyGroceryScreen extends StatelessWidget {
               onPressed: () {
                 Provider.of<TabManager>(context, listen: false).goToRecipes();
               },
-            )
+            ),
           ],
         ),
       ),

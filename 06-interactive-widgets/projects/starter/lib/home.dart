@@ -17,16 +17,14 @@ class _HomeState extends State<Home> {
   static List<Widget> pages = <Widget>[
     ExploreScreen(),
     RecipesScreen(),
-    // TODO 1: Replace with grocery screen
     const GroceryScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
-    // TODO 9: Wrap inside a Consumer Widget
+    // 1
     return Consumer<TabManager>(
       builder: (context, tabManager, child) {
-        child:
         return Scaffold(
           appBar: AppBar(
             title: Text(
@@ -34,13 +32,18 @@ class _HomeState extends State<Home> {
               style: Theme.of(context).textTheme.headline6,
             ),
           ),
-          // TODO: Replace body
-          body: pages[tabManager.selectedTab],
+          // 2
+          body: IndexedStack(
+            index: tabManager.selectedTab,
+            children: pages,
+          ),
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor:
                 Theme.of(context).textSelectionTheme.selectionColor,
+            // 3
             currentIndex: tabManager.selectedTab,
             onTap: (index) {
+              // 4
               tabManager.goToTab(index);
             },
             items: <BottomNavigationBarItem>[
